@@ -1,0 +1,106 @@
+COMPLETED ELEMENTS:
+COMPLETE:       Adjust string constructor (parseInput) so that it puts the smallest substring first;
+COMPLETE:       Related to ^: Fix order. See photos in document folder [Removed]
+COMPLETE:       Figure out why last number isn't being displayed. See if it's even in FullNumber.
+COMPLETE:       Create a recursive/iterative add function.
+COMPLETE:       Multiplication (int) -> we just need to do it with utlra Number
+COMPLETE:       Redid Multiplication (with int) due to time complexity issues. 
+    SOLUTION:       Explanation: While multiplication is essentially a way of representing lots of addition, implementing the algorithm by doing addition takes way too much time.
+                    The original method could take minutes. Even for small UltraNumbers.
+                    Fixed by multiplying input by each integer in fullNumber. Due to data size issues, had to store product as "long long."              
+COMPLETE:       Multiplication (UltraNumber)
+IN PROGRESS:    Subtraction:
+    EXPLANATION:        Current state May be buggy
+COMPLETE:       Fix subtraction bug. Found a way to implement subtraction without bug.
+COMPLETE:       Test if int is larger than 999,999,999 or force UltraNumber
+COMPLETE:       CleanUp
+COMPLETE:       Subtraction (UltraNumber)
+COMPLETE:       Division (int)
+COMPLETE:       Mod (int)
+COMPLETE:       Division (UltraNumber)
+COMPLETE:       Mod (UltraNumber)
+COMPLETE:       FINISH BASIC MATH
+
+===================================================================================
+
+NEXT OBJECTIVE:     Negatives
+NEXT OBJECTIVE:     Decimals
+NEXT OBJECTIVE:     Less basic math
+NEXT OBJECTIVE:     Optimize Pointers.
+
+
+===================================================================================
+
+TODO: FINISH LESS BASIC MATH
+
+            Note: Do decimals before root.
+            Root
+                quintillion = 10^18 = (10^9)^2 = (10^6)^3
+            Log
+            Negatives!!!!!
+                   Fix subtraction bug. <Currently assuming no negative result>
+            Decimals
+            Scientific Notation?
+
+TODO: MAKE CALCULATOR INTERFACE
+TODO: INCORPORATE OPERATOR OVERLOADING
+        instead of add do + or +=, %
+        comparison such as >, <, ==, != , >=, etc.
+
+TODO: Exponent (int)
+        I actually don't know if I feel safe with this one^ At the very least, do core four, publish, then do this one.
+
+
+TODO: (LOW PRIORITY):
+    Look for redundancies in code. i.e. two functions that do the same thing. 
+    Optimize search function
+    Maybe pass with pointer or pass by reference.
+
+
+=====================================================================================
+4/03/2025 ??:?? Uploaded to GitHub. Will probably take a break for some time. 
+4/03/2025 20:03 added a mod function. Seems to be working.
+4/03/2025 19:46 That seems to have solved the problem. 
+3/26/2025 20:51 Worked on it for maybe 30 minutes. Noticed a flaw of prototyping. Fixed that. We had a vector with 2 positions be divisible by a number with 1 position. 
+Now we have a problem with 2 sections divided by 2 sections. Currently seem to have a situation where getBestMultiple is searching through every multiple and not finding anything. 
+Perhaps it's an issue with the size of the divisor. I didn't check my notes before starting today. Generate Multiples seems to be working implying the problem is in getBest. 
+=== Well my laundry's done and I made significant progress. 
+Instead of getting stuck on the first digit, I got stuck on the 11... which I just realized is the first one where the multiple isn't 0. Whatever, it's late. I'm going to bed. 
+It is, but it's also a multiple of 9. -> Maybe, because it never found a bigger number (which is appropriate in this case) it assumed something wrong happened.
+3/23/2025 12:14 Tried 98765432100123456789 / 10000000000 -> I got an error. Looks like an issue with get best multiple. perhaps it's only looking at the final value of the divisor. Logging off for now
+3/23/2025 11:54 I've got it working with small numbers in UN format. Will test larger numbers.
+3/23/2025 11:30 Division is almost working. Test (1111 / 7) = 158.714, however results were 15872 (so no decimal AND wrong number at the end)
+        I think the issue stems from a bug where the loop is always pulling the first digit. After you pull the final 1, if division is done normally, it should pull a zero. meaning small divide should be 50. In my test i think it may be 51. Either way, the next digit in the quotient is 7. Yup we have 51 instead of 50. Looks like an incrementation problem. Yup always adding the first digit.
+3/23/2025 11:03 Fixed an issue with lessThanComparison. Unsure if it will make a meaningful difference at this time. 
+3/23/2025 10:43 Seems to be a problem with getBestMultiple. returning the wrong value.
+3/22/2025 20:39 issue with subtraction(UltraNumber). Causing an abort all session.
+3/22/2025 20:13 add2End seems to have problem. --> add2End had a parameter of pass by value, not reference.
+3/22/2025 19:56 I think my generate multiples function may be off.
+3/22/2025 19:48 Been busy with work and other projects. Working on divide. Looping subroutines. 
+        Note: Switching to military time
+3/09/2025 1:44 completed a lot of sub routines for divide. 
+3/06/2025 5:36 Rehaul of GrabDigit. It's working fine now.  
+3/06/2025 4:42 I tested some functions in division. Debugging right now. Currently working on GrabDigit. 
+2/22/2025 10:30 Got a fair amount of work done on division. Division is proving to be a doozy and a half. 
+2/12/2025 6:00 PM Just found out I have strep throat. 
+2/12/2025 11:31 AM Got a new job. Less time to work on projects.
+2/3/2025  1:35 PM   I've decided to just make a basic long division function. We can optimize it later with binary search tree, recursion,  hash table etc. 
+2/2/2025  2:03 PM   Upon testing another algorithm, I noticed a weird bug when dividing by 1 with UltraNumber make sure to test. === Actually I had it set on mod instead of divide. That would explain the error;
+2/2/2025 12:53 PM. Did some tests with dividing UltraNumber algorithms on pen and paper. Unfortunately results were not what was expected. The other day I asked ChatGPT for a refresher on how to use distributive property on division. Upon further inspection I noticed its numbers were wrong and it was talking crazy. (See photos) I will either have to figure out how distributive property works with division or find another way. Current ideas may include finding difference of dividend and divisor by power of 10, so ie. dividend is 1000 times biggers so quotient will be around 1000 then work from there. Maybe use a hash table or balanced binary tree to find optimal value. Maybe like 1x1000, + 2x100, + 7x10, + 3x1 = 1273. I guess that's basically long division when you think about it. 
+1/31/2025 7:06 Do extensive testing on Divide with UltraNumber. 
+1/30/2025 7:14 Ran errands, came back to program. Same issue as multiplication, using wrong FullNumber. Now it works fine.
+1/30/2025 1:00 Made an UltraNumber subtraction system. Program aborted. Input was (3579111315171921232, 235711131723) expected output (3,|579,111,079,|460,789,509); 
+1/29/2025 10:00 Made a basic int based substraction system. 
+1/24/2025 8:20 took a break for a few days. Working on other projects. Simple error, defining variable from wrong UltraNumber.
+1/21/2025 11 PM 
+NOTE: Weird error, producing too many sets of 0s. Perhaps it's our shift function.
+    Upon second test int x UN we got stranger data.
+
+1/21/2025 12AM
+NOTE: PERHAPS WITH MULTIPLICATION IT WOULD BE EASIER TO UTILIZE ASSOCIATE PROPERTY.
+        975X756 = 975x700 + 975x50 + 975*6 -> This may cause memory problems.
+NOTE: OUR MULTIPLY IS NOT UTILIZING PATTERNS OF MULTIPLICATION. IT'S JUST ADDING.  
+        for example if we multiply 7x7 we know that's 49. We don't add 7 to itself 7 times. 
+        In our programs current state, our time complexity is waaaaay to big.
+
+NOTE: I suppose at the very least we could do something like, fn1 = (A,B,C) and fn2 = (D,E) -> (ABC)*D*10^9 + (ABC) * E 
